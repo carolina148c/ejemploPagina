@@ -15,18 +15,29 @@
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
-            background-color: #f4f4f4;
-            color: #333;
+            background-color: #f8f9fa; /* Fondo claro */
+            color: #333; /* Texto oscuro */
+        }
+
+        /* Paleta de colores */
+        :root {
+            --color-primary: #6c5ce7; /* Morado moderno */
+            --color-secondary: #00b894; /* Verde fresco */
+            --color-accent: #ff7675; /* Rojo coral */
+            --color-background: #f8f9fa; /* Fondo claro */
+            --color-text: #333; /* Texto oscuro */
+            --color-text-light: #fff; /* Texto claro */
         }
 
         /* Estilos del encabezado */
         header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
+            background-color: var(--color-primary);
+            color: var(--color-text-light);
+            padding: 15px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         nav {
@@ -41,6 +52,7 @@
         .logo {
             font-size: 24px;
             font-weight: bold;
+            color: var(--color-text-light);
         }
 
         .nav-links {
@@ -53,26 +65,27 @@
         }
 
         .nav-links a {
-            color: #fff;
+            color: var(--color-text-light);
             text-decoration: none;
             font-size: 16px;
             transition: color 0.3s ease;
         }
 
         .nav-links a:hover {
-            color: #ff6347;
+            color: var(--color-accent);
         }
 
         /* Estilos de la sección hero */
         .hero {
-            background: url('https://via.placeholder.com/1200x600') no-repeat center center/cover;
-            color: #fff;
+            background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+            color: var(--color-text-light);
             height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
+            padding: 0 20px;
         }
 
         .hero h1 {
@@ -86,23 +99,24 @@
         }
 
         .hero button {
-            padding: 10px 20px;
+            padding: 12px 24px;
             font-size: 18px;
-            color: #333;
-            background-color: #fff;
+            color: var(--color-primary);
+            background-color: var(--color-text-light);
             border: none;
+            border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .hero button:hover {
-            background-color: #ff6347;
-            color: #fff;
+            background-color: var(--color-accent);
+            color: var(--color-text-light);
         }
 
         /* Estilos de las secciones */
         section {
-            padding: 60px 20px;
+            padding: 80px 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -111,12 +125,14 @@
             font-size: 36px;
             margin-bottom: 20px;
             text-align: center;
+            color: var(--color-primary);
         }
 
         section p {
             font-size: 18px;
             line-height: 1.8;
             text-align: center;
+            color: var(--color-text);
         }
 
         .services-grid {
@@ -127,16 +143,23 @@
         }
 
         .service-card {
-            background-color: #fff;
+            background-color: var(--color-text-light);
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
         }
 
         .service-card h3 {
             font-size: 24px;
             margin-bottom: 10px;
+            color: var(--color-primary);
         }
 
         .service-card p {
@@ -153,31 +176,38 @@
         }
 
         form input, form textarea {
-            padding: 10px;
+            padding: 12px;
             margin-bottom: 20px;
             border: 1px solid #ccc;
-            border-radius: 4px;
+            border-radius: 5px;
             font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        form input:focus, form textarea:focus {
+            border-color: var(--color-primary);
+            outline: none;
         }
 
         form button {
-            padding: 10px 20px;
+            padding: 12px 24px;
             font-size: 18px;
-            background-color: #333;
-            color: #fff;
+            background-color: var(--color-primary);
+            color: var(--color-text-light);
             border: none;
+            border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
 
         form button:hover {
-            background-color: #ff6347;
+            background-color: var(--color-secondary);
         }
 
         /* Estilos del pie de página */
         footer {
-            background-color: #333;
-            color: #fff;
+            background-color: var(--color-primary);
+            color: var(--color-text-light);
             text-align: center;
             padding: 20px 0;
         }
